@@ -1,0 +1,38 @@
+.wrapper {
+    text-align: center;
+    overflow: auto;
+    height: 50px;
+}
+
+mat-card{
+    width:auto;
+    max-height:auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-form-field{
+    width:auto;
+        /* height:60px; */
+        padding-left: 20px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-top:100px; */
+}
+
+.remove-btn{
+    margin-left: 20px;
+}
+
+.input-textfield{
+    width: auto;
+}
+
+.submit-button{   
+    margin-left: 81%;
+}

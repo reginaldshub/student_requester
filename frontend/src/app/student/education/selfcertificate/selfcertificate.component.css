@@ -1,0 +1,24 @@
+ 
+table{
+    width: 300px;
+  
+}
+
+.granted-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+mat-spinner{
+    margin: auto;
+}
+.container {
+    display: grid;
+    grid-gap: 30px;
+    grid-row-gap:0px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows:400px 300px;     
+    /* justify-content: space-evenly; */
+    /* grid-auto-rows: 500px; */
+}

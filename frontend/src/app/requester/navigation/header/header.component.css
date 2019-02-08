@@ -1,0 +1,157 @@
+/* 
+.navigation-items{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+*/
+
+/* li{
+    padding: 10px;
+}  */
+/* a:hover{
+    color: lightgray;
+}
+ a{
+    text-decoration: none;
+    color: white;
+} */
+
+.container {
+    display: grid;
+    /* grid-gap: 10px;   */
+    grid-template-columns: repeat(7,100px);
+    justify-items: center;
+}
+/* .user{
+    grid-column: 7/-1;
+} */
+.container > div:nth-child(4) {
+    padding-left: 10px
+}
+
+.container > div:nth-child(7) {
+    padding-left: 20px
+}
+.back-btn{
+    position: absolute;
+    right: 0px;
+    margin: 5px;
+}
+
+
+ul {
+    list-style-type: none;
+    /* margin: 0; */
+    padding: 0;
+    overflow: hidden;
+    background-color: #3C55B0;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    /* background-color: white; */
+    opacity: 0.6;
+    /* color:white; */
+    border-radius: 10px;
+  }
+  
+  .active {
+    background-color: #344a98;
+  }
+
+  /* drop down */
+  .dropbtn {
+    background-color: #3C55B0;
+    color: white;
+    /* padding-right: 30px; */
+    font-family: Raleway, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Helvetica Neue", Arial, sans-serif;
+    font-weight:400;
+    font-size:20px;
+    color:#ffffff;
+    border: none;
+    cursor: pointer;
+    justify-content: space-between;
+    padding: 12px 0;
+
+    margin-top:5px;
+  }
+  
+  .dropdown {
+    /* position: relative; */
+    display: inline-block;
+    width:25%;
+    float:left;
+    padding: 12px 0;
+    text-align: right;
+  }
+
+  div, button {
+    outline:none;
+    border:none;
+  }
+
+  div, button {
+    outline:none;
+    border:none;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    text-align: center;
+    /* margin-top:5px; */
+    background-color: #3C55B0;
+    min-width: 160px;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+    right:0;
+  }
+  
+  .dropdown-content a {
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    margin-left: 0;
+  }
+  
+  .dropdown-content a:hover {
+    opacity: 0.6;      
+}
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropbtn {
+    opacity: 0.6;
+    /* background-color: #344a98; */
+  }
+  mat-toolbar{
+  position: fixed;
+  z-index: 1;
+  /* margin-top: 0px; */
+}
+
+.outer-container{
+  width: 99%;
+}
+
+.header{
+  width: 75%;
+  float: left;
+}
+
+

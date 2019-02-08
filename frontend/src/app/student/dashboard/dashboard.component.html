@@ -1,0 +1,26 @@
+<!-- <mat-toolbar color="primary">
+  <button mat-button  [routerLink]="['/account']">Account</button>
+  <button mat-button class="profile" [routerLink]="['/student/profile']">Profile</button>
+  <button mat-button  [routerLink]="['/student/education']">Education</button>
+  <button mat-button  [routerLink]="['/student/requests']">Requests</button>
+  <button mat-button [routerLink]="['/student/certificates']">Certificate</button>
+  <button class="logout" mat-button [routerLink]="['/login']" (click)="authservice.logoutUser()">Logout</button> 
+  <mat-icon>person</mat-icon>
+    <p><strong>{{username}}</strong></p> 
+</mat-toolbar> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+            <app-sidenav-list (closeSidenav)="sidenav.close()"></app-sidenav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <app-header (sidenavToggle)="sidenav.toggle()"></app-header>
+            <!-- <main> -->
+                <br/>
+                <br/> 
+                <router-outlet></router-outlet>
+            <!-- </main> -->
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- <router-outlet></router-outlet> -->
