@@ -1,0 +1,31 @@
+.wrapper {
+    text-align: center;
+}
+
+mat-form-field{
+    padding-left: 20px;
+}
+
+mat-card{
+    width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+mat-form-field{
+    width: 300px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top:50px;
+}
+.wrapper button{
+    margin-right:16px;
+}
+.wrapper button:last-child{
+    margin-right:0px;
+    }

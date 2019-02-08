@@ -1,0 +1,82 @@
+<br />
+<div class="profile-details" *ngIf="data" style="font-family: Verdana, sans-serif;">
+<span ><strong>Name:&nbsp;</strong>{{data.name}} </span>
+<span ><strong>DOB:&nbsp;</strong>{{data.dob | date:"dd/MM/yyyy"}} </span>
+<span ><strong>Gender:&nbsp;</strong>{{data.gender}}</span>
+<span ><strong>State:&nbsp;</strong>{{data.state}}</span>
+</div>
+
+<div class="accordian">
+    <mat-accordion class="example-headers-align">
+        <mat-expansion-panel [expanded]="step === 0" (opened)="setStep(0)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    SSLC
+                </mat-panel-title>
+                <mat-panel-description>
+                    Add your Tenth class marks
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-add10th></app-add10th>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step === 1" (opened)="setStep(1)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    PUC
+                </mat-panel-title>
+                <mat-panel-description>
+                    Add your Twelth class marks
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-puc></app-puc>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step === 2" (opened)="setStep(2)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Degree
+                </mat-panel-title>
+                <mat-panel-description>
+                    Add your Bachelor marks
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-degree></app-degree>
+        </mat-expansion-panel>
+
+        <mat-expansion-panel [expanded]="step === 3" (opened)="setStep(3)">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    Masters
+                </mat-panel-title>
+                <mat-panel-description>
+                    Add your Master Degree marks
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <app-masters></app-masters>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>
+
+<!-- <span>Please Commit to deploy the contract</span> -->
+<div class="container">
+    <form [formGroup]="Create" (submit)="onCreate()">
+        <mat-form-field>
+            <input type="password" formControlName="password" matInput placeholder="Password" [type]="hide ? 'text':'password'">
+            <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            <mat-error>enter valid password to commit </mat-error>
+        </mat-form-field> &nbsp;&nbsp;
+        <button mat-raised-button type="submit" color="primary" class="submit-button" [disabled]="Create.invalid">Commit</button>
+        <br /><strong>{{account}}</strong>
+        <mat-spinner *ngIf="showSpinner"></mat-spinner>
+    </form>
+
+</div> <br />
+
+
+
+<!-- data -->
+<!-- <span><strong>Name:</strong>{{data.name}} </span> -->
+<!-- <span><strong>DOB:</strong>{{data.dob | date:"dd/MM/yyyy"}} </span>
+            <span><strong>Gender:</strong>{{data.gender}}</span>
+            <span><strong>State:</strong>{{data.state}}</span> -->

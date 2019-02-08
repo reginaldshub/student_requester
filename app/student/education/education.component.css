@@ -1,0 +1,37 @@
+  .example-headers-align .mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-details{
+  font-size: 18px;
+  /* position: fixed;
+  z-index: 0; */
+  color:Black;
+  width: 100%;
+  /* top: 65px; */
+  /* background-color: #395890; */
+}
+ span{
+  padding-right: 15px;
+} 
+
+.accordian{
+  margin-top: 0px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+mat-panel-title{
+  font-weight: bold;
+}

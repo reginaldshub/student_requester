@@ -1,0 +1,19 @@
+table{
+    width: 300px;
+}
+.search-button, .email-input{
+    padding-left: 20px;
+}
+/* .search-bar{
+    flex: 1 1 auto;
+    text-align: center;
+} */
+.granted-list, .search-results, .search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.request-btn{
+    background-color: green;
+    color: white;
+}

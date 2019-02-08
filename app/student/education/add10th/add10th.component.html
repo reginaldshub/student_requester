@@ -1,0 +1,74 @@
+<div class="container">
+  <!-- <mat-card> -->
+    <form [formGroup]="add10th">
+      <mat-form-field class="input-textfield">
+        <input matInput placeholder="Registration No." formControlName="id">
+        <mat-error>Enter name</mat-error>
+      </mat-form-field>
+
+      <!-- <mat-form-field class="input-textfield">
+        <input matInput placeholder="Education Category" formControlName="ecategory">
+      </mat-form-field> -->
+
+      <mat-form-field class="input-textfield">
+        <mat-select placeholder="Education Category" formControlName="ecategory">
+          <mat-option *ngFor="let category of categories" [value]="category.name">
+            {{category.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <mat-form-field class="input-textfield">
+        <input matInput placeholder="Start Year" formControlName="Startyear">
+      </mat-form-field> -->
+
+      <mat-form-field>
+        <mat-select placeholder="Start Year" formControlName="Startyear">
+          <mat-option *ngFor="let year of years" [value]="year.value">
+            {{year.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- <mat-form-field class="input-textfield">
+        <input matInput placeholder="End Year" formControlName="Endyear">
+      </mat-form-field> -->
+      <mat-form-field>
+        <mat-select placeholder="End Year" formControlName="Endyear">
+          <mat-option *ngFor="let year of years" [value]="year.value">
+            {{year.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Endyear less than Startyear</mat-error>
+      </mat-form-field>
+      <br />
+      
+      <div class="wrapper">
+        <div formArrayName="addsubjects">
+          <div *ngFor="let group of subjectArray.controls; let i= index;" [formGroupName]="i">
+            <mat-form-field>
+              <input matInput placeholder="Subject Name" formControlName="subjectname">
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Subject Marks" formControlName="subjectmarks">
+            </mat-form-field>
+            
+            <button class="remove-btn" mat-button color="primary" matTooltip="Remove" (click)="Remove(i)">
+              <mat-icon>remove_circle_outline</mat-icon>
+            </button>
+            <button mat-button color="primary" *ngIf="(i+1) == subjectArray.length" [disabled]="disableBtn" matTooltip="Add" (click)="Add()">
+              <mat-icon>add_circle_outline</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper">
+          <button *ngIf="isSaveBtn" class="submit-button" mat-raised-button (click)="submit()" [disabled]="add10th.invalid" color="primary">Save</button> 
+          <button *ngIf="isEditBtn" class="submit-button" mat-raised-button type="submit" (click)="submit()" [disabled]="add10th.invalid" [disabled]="profileDetails.invalid" color="primary">Update</button>
+          <button *ngIf="isEditBtn" class="cancel-button" mat-raised-button type="button" color="warn" (click)="getCertificates()">Cancel</button>
+          <button *ngIf="!isSaveBtn && !isEditBtn" class="submit-button" mat-raised-button type="button" (click)="hideEditBtn()" color="primary">Edit</button>
+        </div>
+      <!-- <button class="submit-button" mat-raised-button (click)="submit()" [disabled]="add10th.invalid" color="primary">Save</button> -->
+    </form>
+  <!-- </mat-card> -->
+</div>

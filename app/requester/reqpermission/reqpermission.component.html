@@ -1,0 +1,46 @@
+<h2>Certificates</h2>
+<div class="granted-list">
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+
+      <ng-container matColumnDef="name">
+          <th style="text-align: left" mat-header-cell *matHeaderCellDef> Name </th>
+          <td style="text-align: left" mat-cell *matCellDef="let element">
+              {{element.studentName}}
+          </td>
+      </ng-container>
+      
+      <!-- <div fxShow.lt-md="false" fxShow.gt-sm="true"> -->
+      <ng-container matColumnDef="Created_time" >
+          <th style="text-align: left" mat-header-cell *matHeaderCellDef> Created Time </th>
+          <td mat-cell *matCellDef="let element">
+              <!-- <div fxShow.lt-md="false" fxShow.gt-sm="true"> -->
+                {{element.Created_time | date:'shortDate'}}
+              <!-- </div> -->
+          </td>
+      </ng-container>
+      <!-- </div> -->
+
+      <ng-container class="status" matColumnDef="status">
+          <th mat-header-cell *matHeaderCellDef> Status </th>
+          <td mat-cell *matCellDef="let element">
+              <!-- <button *ngIf="element.status == 'granted'" (click) = "sendData(element.name)" mat-button matTooltip="click" aria-label="Button that displays a tooltip when focused or hovered over" #name>view</button> -->
+              {{element.Status}}
+          </td>
+      </ng-container>
+
+      <ng-container class="view" matColumnDef="view">
+          <th style="text-align: end; padding-right:50px" mat-header-cell *matHeaderCellDef> Action </th>
+          <td style="text-align: end" mat-cell *matCellDef="let element">
+              <button (click)="sendData(element.studentName)" mat-raised-button color = "primary" matTooltip="view">view</button>
+          </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+
+<div class="granted-list" *ngIf = "dataSourceLength">
+<h3 style="color:red">No Records found</h3><br/> 
+</div>

@@ -1,0 +1,12 @@
+table{
+    width: 50%;
+}
+.granted-list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#requests-table tr:nth-child(even){background-color: #f2f2f2;}
+
+#requests-table tr:hover {background-color: #ddd;}

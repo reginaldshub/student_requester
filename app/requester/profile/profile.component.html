@@ -1,0 +1,164 @@
+<!-- <mat-toolbar color="primary">
+    <button mat-button color="warn" [routerLink]="['/account']">Account</button>
+    <button mat-button class="profile" [routerLink]="['/requester/search']">Search</button>
+    <button mat-button class="profile" [routerLink]="['/requester/requests']">Requests</button>
+    <button mat-button class="profile" [routerLink]="['/requester/profile']">Profile</button>
+    <button mat-button class="profile" [routerLink]="['/requester/dashboard']">Dashboard</button>
+    <button class="logout" mat-button [routerLink]="['/login']" (click)="service.logoutUser()">Logout</button>
+    <mat-icon>person</mat-icon>
+    <p><strong>{{username}}</strong></p>
+</mat-toolbar> -->
+<h2>Profile</h2>
+<div *ngIf="profileHider" class="container">
+  <mat-card class="Profile-card">
+    <form class="Profile-form" [formGroup]='profileForm' (submit)="setProfile()">
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+        <mat-error>Enter name</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="address">
+        <mat-error>Enter <address></address></mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="City" formControlName="city">
+        <mat-error>Enter city</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-select placeholder="State" formControlName="state">
+          <mat-option *ngFor="let state of state" [value]="state.value">
+            {{state.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Select State</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Pincode" formControlName="pincode">
+        <mat-error>Enter pincode</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Url" formControlName="url">
+        <mat-error>Enter url</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error>
+          enter valid email
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Country" formControlName="country">
+        <mat-error>Enter country</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Phone" formControlName="phone">
+        <mat-error>
+          invalid phone
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <div class="wrapper">
+        <button class="submit-button" mat-raised-button type="submit" [disabled]="profileForm.invalid" color="primary">Register</button>
+      </div>
+    </form>
+  </mat-card>
+</div>
+
+
+
+<div *ngIf="!profileHider" class="container" (submit)="updateProfile()">
+  <mat-card class="Profile-card">
+    <form class="Profile-form" [formGroup]='profileDetails'>
+
+      <mat-form-field>
+        <input matInput placeholder="Name" formControlName="name">
+        <mat-error>Enter name</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="address">
+        <mat-error>Enter <address></address></mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="City" formControlName="city">
+        <mat-error>Enter city</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-select placeholder="State" formControlName="state">
+          <mat-option *ngFor="let state of state" [value]="state.value">
+            {{state.viewValue}}
+          </mat-option>
+        </mat-select>
+        <mat-error>Select State</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Pincode" formControlName="pincode">
+        <mat-error>Enter pincode</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Url" formControlName="url">
+        <mat-error>Enter url</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error>
+          enter valid email
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Country" formControlName="country">
+        <mat-error>Enter country</mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput placeholder="Phone" formControlName="phone">
+        <mat-error>
+          invalid phone
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <input matInput style="font-size: 13px" placeholder="account_address" formControlName="account_address">
+      </mat-form-field>
+      <br />
+
+      <div class="wrapper">
+        <button *ngIf="!isEditBtn" class="submit-button" mat-raised-button type="submit" color="primary" [disabled]="profileDetails.invalid">Save</button>
+        <button *ngIf="!isEditBtn" class="cancel-button" mat-raised-button type="button" color="warn" (click)="getProfile()">Cancel</button>
+        <button *ngIf="isEditBtn" class="submit-button" mat-raised-button type="button" (click)="hideEditBtn(isEditBtn)" color="primary">Edit</button>
+      </div>
+    </form>
+  </mat-card>
+</div>

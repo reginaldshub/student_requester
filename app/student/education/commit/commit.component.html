@@ -1,0 +1,17 @@
+
+<div class="container">
+<mat-card class="card">
+  <form [formGroup]="Create" (submit)="onCreate()">
+    <mat-form-field>
+      <input type="password" formControlName="password" matInput placeholder="Password" [type]="hide ? 'text':'password'">
+    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      <mat-error>enter valid password</mat-error>
+    </mat-form-field>
+    <br/>
+    <button mat-raised-button type="submit" color="primary" class="submit-button" [disabled]="Create.invalid">Commit</button>
+    <br/><strong>{{account}}</strong>
+    <mat-spinner *ngIf="showSpinner"></mat-spinner>
+  </form>
+  
+</mat-card>
+</div>
